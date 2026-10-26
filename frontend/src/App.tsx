@@ -7,7 +7,10 @@ import { ScanProgress } from './components/ScanProgress';
 import { ExtensionPage } from './components/ExtensionPage';
 import type { ScanResult, Category } from './types';
 
-const API_URL = (import.meta.env.VITE_API_URL ?? 'http://localhost:3002').replace(/\/$/, '');
+const API_URL = (
+  import.meta.env.VITE_API_URL ??
+  'https://accessibility-checker-jb3g.onrender.com'
+).replace(/\/$/, '');
 
 const CATEGORY_ORDER: Category[] = [
   'images-media',
@@ -183,8 +186,8 @@ export default function App() {
               aria-controls="panel-scanner"
               onClick={() => setActiveTab('scanner')}
               className={`flex-1 py-2.5 px-4 rounded-xl font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-purple-600 ${activeTab === 'scanner'
-                  ? 'bg-white text-purple-900 card-shadow-sm border-2 border-purple-300'
-                  : 'text-purple-600 hover:text-purple-900 hover:bg-white/50'
+                ? 'bg-white text-purple-900 card-shadow-sm border-2 border-purple-300'
+                : 'text-purple-600 hover:text-purple-900 hover:bg-white/50'
                 }`}
             >
               🌐 Web Auditor
@@ -197,8 +200,8 @@ export default function App() {
               aria-controls="panel-extension"
               onClick={() => setActiveTab('extension')}
               className={`flex-1 py-2.5 px-4 rounded-xl font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-purple-600 ${activeTab === 'extension'
-                  ? 'bg-white text-purple-900 card-shadow-sm border-2 border-purple-300'
-                  : 'text-purple-600 hover:text-purple-900 hover:bg-white/50'
+                ? 'bg-white text-purple-900 card-shadow-sm border-2 border-purple-300'
+                : 'text-purple-600 hover:text-purple-900 hover:bg-white/50'
                 }`}
             >
               🧩 Chrome Extension
